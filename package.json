@@ -1,7 +1,7 @@
 {
   "name": "keymap-disabler",
   "main": "./lib/main",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Disable package's default keymap completely",
   "repository": "https://github.com/t9md/atom-keymap-disabler",
   "license": "MIT",
