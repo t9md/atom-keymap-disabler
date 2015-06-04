@@ -12,12 +12,46 @@ Although I released this package for my minimalistic preference, if you want mor
 
 # How to use.
 
-Add list of package name to `Packages` configuration parameter.  
+Add package name to `bundledPackages` or `communityPackages`.  
 You need to reload Atom for new configuration take effect.  
+You can use wildcard `*` to disable **all** packages keymap.
 
-e.g.
+* `bundledPackages`
+```
+tree-view, symbols-view
+```
+
+* `communityPackages`  
 ```
 package1, package2
+```
+Or disable all community package's keymap by
+```
+*
+```
+
+## Practical example
+
+* I want to disable default keymap for `symbols-view` bundled package.
+* I want to disable all default keymap for community package except `vim-mode` provides.
+
+Configuration to achieve above requirement is here.
+
+* `bundledPackages`:`symbols-view`
+* `communityPackages`: `*`
+* `communityPackagesException`: `vim-mode`
+
+```coffeeScript
+"keymap-disabler":
+  bundledPackages: [
+    "symbols-view"
+  ]
+  communityPackages: [
+    "*"
+  ]
+  communityPackagesException: [
+    "vim-mode"
+  ]
 ```
 
 # Similar packages
